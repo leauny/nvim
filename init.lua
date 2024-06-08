@@ -28,3 +28,5 @@ spec "user.project"
 spec "user.indentline"
 spec "user.toggleterm"
 require "user.lazy"
+
+-- print(vim.inspect(LAZY_PLUGIN_SPEC))
