@@ -5,6 +5,18 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Disable arrow keys
+keymap({ "n", "v", "i", "x" }, "<Up>", "<Nop>", opts)
+keymap({ "n", "v", "i", "x" }, "<Down>", "<Nop>", opts)
+keymap({ "n", "v", "i", "x" }, "<Left>", "<Nop>", opts)
+keymap({ "n", "v", "i", "x" }, "<Right>", "<Nop>", opts)
+
+keymap("n", "<C-s>", "<cmd>w<CR>", opts)
+
+keymap("n", "<C-q>", "<cmd>bd<CR>", opts)
+keymap("n", "<C-l>", "<cmd>bn<CR>", opts)
+keymap("n", "<C-h>", "<cmd>bp<CR>", opts)
+
 keymap("n", "<C-i>", "<C-i>", opts)
 
 -- Better window navigation
@@ -24,6 +36,9 @@ keymap("n", "g#", "g#zz", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+-- Move selected line / block of text in visual mode
+keymap("v" , "J", ":m '>+1<CR>gv=gv", opts)
+keymap("v" , "K", ":m '<-2<CR>gv=gv", opts)
 
 keymap("x", "p", [["_dP]])
 
