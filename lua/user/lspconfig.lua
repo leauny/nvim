@@ -22,6 +22,10 @@ end
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
 
+  if client.server_capabilities["documentSymbolProvider"] then
+    require("nvim-navic").attach(client, bufnr)
+  end
+
   if client.supports_method "textDocument/inlayHint" then
     vim.lsp.inlay_hint.enable(bufnr, true)
   end
