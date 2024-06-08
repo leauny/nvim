@@ -58,5 +58,8 @@ keymap({ "n", "x" }, "j", "gj", opts)
 keymap({ "n", "x" }, "k", "gk", opts)
 keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
+-- clear search highlights
+keymap({"n", "v", "x"}, "<leader><space>", "<cmd>nohlsearch<CR>", opts)
+
 
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)

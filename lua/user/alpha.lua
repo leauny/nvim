@@ -29,7 +29,8 @@ function M.config()
     button("r", icons.ui.History .. " Recent files", ":Telescope oldfiles <CR>"),
     button("t", icons.ui.Text .. " Find text", ":Telescope live_grep <CR>"),
     button("c", icons.ui.Gear .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
-    button("q", icons.ui.SignOut .. " Quit", ":qa<CR>"),
+    button("o", icons.ui.EmptyFolderOpen .. " Open project", [[<cmd>lua require("persistence").load()<cr>]]),
+    button("l", icons.ui.Folder .. " Open latest project", [[<cmd>lua require("persistence").load({last = true})<cr>]]),
   }
   local function footer()
     return "chrisatmachine.com"
