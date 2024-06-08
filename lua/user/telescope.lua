@@ -1,6 +1,10 @@
 local M = {
   "nvim-telescope/telescope.nvim",
-  dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true } },
+  dependencies = { 
+    { "nvim-lua/plenary.nvim" },
+    { "BurntSushi/ripgrep" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }
+   },
 }
 
 function M.config()
@@ -60,7 +64,7 @@ function M.config()
     },
     pickers = {
       live_grep = {
-        theme = "dropdown",
+        -- theme = "dropdown",
       },
 
       grep_string = {
