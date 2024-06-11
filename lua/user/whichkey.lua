@@ -6,8 +6,12 @@ function M.config()
   local mappings = {
     q = { "<cmd>confirm q<CR>", "Quit" },
     [";"] = { "<cmd>tabnew | terminal<CR>", "Term" },
-    v = { "<cmd>vsplit<CR>", "VSplit" },
-    h = { "<cmd>split<CR>", "HSplit" },
+    s = {
+      name = "Split",
+      v = { "<cmd>vsplit<CR>", "VSplit" },
+      h = { "<cmd>split<CR>", "HSplit" },
+    },
+    h = { name = "Harpoon" },
     b = { name = "Buffers" },
     d = { name = "Debug" },
     f = { name = "Find" },
