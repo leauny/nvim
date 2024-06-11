@@ -11,8 +11,16 @@ keymap({ "n", "v", "i", "x" }, "<Down>", "<Nop>", opts)
 keymap({ "n", "v", "i", "x" }, "<Left>", "<Nop>", opts)
 keymap({ "n", "v", "i", "x" }, "<Right>", "<Nop>", opts)
 
+-- Insert mode move
+keymap("i", "<m-k>", "<Up>", opts)
+keymap("i", "<m-j>", "<Down>", opts)
+keymap("i", "<m-l>", "<Right>", opts)
+keymap("i", "<m-h>", "<Left>", opts)
+
+-- Save file
 keymap("n", "<C-s>", "<cmd>w<CR>", opts)
 
+-- Buffer control
 keymap("n", "<C-q>", "<cmd>bd<CR>", opts)
 keymap("n", "<C-l>", "<cmd>bn<CR>", opts)
 keymap("n", "<C-h>", "<cmd>bp<CR>", opts)
